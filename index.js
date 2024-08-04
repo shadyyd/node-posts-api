@@ -1,7 +1,11 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const postsRouter = require("./routes/postsRouter");
+const morgan = require("morgan");
+
 const app = express();
+
+app.use(morgan("dev"));
 
 const { existsSync, writeFileSync } = require("fs");
 if (!existsSync("posts.json")) {
