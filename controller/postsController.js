@@ -2,15 +2,7 @@ const postModel = require("./../model/postsModel");
 
 const createPost = async (req, res, next) => {
   try {
-    const { title, description, tags } = req.body;
-    const newPost = {
-      title,
-      description,
-      tags,
-      createdAt: new Date(),
-      updatedAt: new Date(),
-    };
-    const createdPost = await postModel.createPost(newPost);
+    const createdPost = await postModel.createPost(req.body);
     res.status(201).json(createdPost);
   } catch (error) {
     res
@@ -34,7 +26,6 @@ const updatePost = async (req, res, next) => {
   try {
     const { id } = req.params;
     const updatedData = req.body;
-    updatedData.updatedAt = new Date();
     const updatedPost = await postModel.updatePost(id, updatedData);
     if (!updatedPost) {
       return res.status(404).json({ message: "Post not found" });

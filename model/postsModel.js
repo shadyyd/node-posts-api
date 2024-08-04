@@ -13,17 +13,17 @@ const writePosts = async (posts) => {
   await fs.writeFile(filePath, JSON.stringify(posts));
 };
 
-const getPost = async (id) => {
+const createPost = async (body) => {
+  const post = {
+    _id: uuidv4(),
+    ...body,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  };
   const posts = await readAllPosts();
-  return posts.find((post) => post._id === id);
-};
-
-const createPost = async (newPost) => {
-  const posts = await readAllPosts();
-  newPost._id = uuidv4();
-  posts.push(newPost);
+  posts.push(post);
   await writePosts(posts);
-  return newPost;
+  return post;
 };
 
 const updatePost = async (id, updatedData) => {
@@ -31,7 +31,7 @@ const updatePost = async (id, updatedData) => {
   const post = posts.filter((post) => post._id === id)[0];
   if (!post) return null;
 
-  const updatedPost = { ...post, ...updatedData };
+  const updatedPost = { ...post, ...updatedData, updatedAt: new Date() };
   posts = posts.map((post) => (post._id === id ? updatedPost : post));
   await writePosts(posts);
   return updatedPost;
@@ -48,7 +48,6 @@ const deletePost = async (id) => {
 
 module.exports = {
   readAllPosts,
-  getPost,
   createPost,
   updatePost,
   deletePost,
