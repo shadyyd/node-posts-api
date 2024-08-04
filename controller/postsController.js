@@ -2,16 +2,8 @@ const postModel = require("./../model/postsModel");
 
 const createPost = async (req, res, next) => {
   try {
-    const { title, description, tags } = req.body;
-    const newPost = {
-      title,
-      description,
-      tags,
-      createdAt: new Date(),
-      updatedAt: new Date(),
-    };
-    const createdPost = await postModel.createPost(newPost);
-    res.status(201).json(createdPost);
+    const post = await postModel.create(req.body);
+    res.status(201).json(post);
   } catch (error) {
     res
       .status(500)
@@ -21,8 +13,26 @@ const createPost = async (req, res, next) => {
 
 const getPosts = async (req, res, next) => {
   try {
-    const posts = await postModel.readAllPosts();
-    res.status(200).json(posts);
+    const limit = Number(req.query.limit) || 10;
+    const page = Number(req.query.page) || 1;
+
+    const postsCount = await postModel.countDocuments();
+    const numberOfPages = Math.ceil(postsCount / limit);
+
+    const posts = await postModel
+      .find()
+      .limit(limit)
+      .skip((page - 1) * limit); // get posts for the current page
+
+    const pagination = {
+      page,
+      numberOfPages,
+      total: postsCount,
+      next: page < numberOfPages,
+      prev: page > 1,
+    };
+
+    res.status(200).json({ posts, pagination });
   } catch (error) {
     res
       .status(500)
@@ -32,14 +42,14 @@ const getPosts = async (req, res, next) => {
 
 const updatePost = async (req, res, next) => {
   try {
-    const { id } = req.params;
-    const updatedData = req.body;
-    updatedData.updatedAt = new Date();
-    const updatedPost = await postModel.updatePost(id, updatedData);
-    if (!updatedPost) {
+    const post = await postModel.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+      runValidators: true,
+    });
+    if (!post) {
       return res.status(404).json({ message: "Post not found" });
     }
-    res.status(200).json(updatedPost);
+    res.status(200).json(post);
   } catch (error) {
     res
       .status(500)
@@ -49,10 +59,11 @@ const updatePost = async (req, res, next) => {
 
 const deletePost = async (req, res, next) => {
   try {
-    const { id } = req.params;
-    const deletedPost = await postModel.deletePost(id);
-    if (!deletedPost) {
-      return res.status(404).json({ message: "Post not found" });
+    const post = await postModel.findByIdAndDelete(req.params.id);
+    if (!post) {
+      return res
+        .status(404)
+        .json({ message: "No document found with that ID" });
     }
     res.status(204).send();
   } catch (error) {

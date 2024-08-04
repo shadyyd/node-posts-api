@@ -1,55 +1,44 @@
-const fs = require("fs/promises");
-const path = require("path");
-const { v4: uuidv4 } = require("uuid");
+const mongoose = require("mongoose");
 
-const filePath = path.join(__dirname, "./../posts.json");
+const PostSchema = new mongoose.Schema({
+  title: {
+    type: String,
+    required: [true, "Title is required"],
+    minlength: [3, "Title must be at least 3 characters long"],
+    maxlength: [100, "Title must be less than 100 characters long"],
+  },
+  description: {
+    type: String,
+    required: [true, "Description is required"],
+    minlength: [10, "Description must be at least 10 characters long"],
+    maxlength: [500, "Description must be less than 500 characters long"],
+  },
+  tags: {
+    type: [String],
+    required: [true, "At least one tag is required"],
+    validate: {
+      validator: function (tags) {
+        return (
+          tags.length > 0 &&
+          tags.every((tag) => typeof tag === "string" && tag.trim().length > 0)
+        );
+      },
+      message: "Each tag must be a non-empty string",
+    },
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
+  updatedAt: {
+    type: Date,
+    default: Date.now,
+  },
+});
 
-const readAllPosts = async () => {
-  const data = await fs.readFile(filePath);
-  return JSON.parse(data);
-};
+PostSchema.pre("findOneAndUpdate", function (next) {
+  this.set({ updatedAt: new Date() });
+  next();
+});
 
-const writePosts = async (posts) => {
-  await fs.writeFile(filePath, JSON.stringify(posts));
-};
-
-const getPost = async (id) => {
-  const posts = await readAllPosts();
-  return posts.find((post) => post._id === id);
-};
-
-const createPost = async (newPost) => {
-  const posts = await readAllPosts();
-  newPost._id = uuidv4();
-  posts.push(newPost);
-  await writePosts(posts);
-  return newPost;
-};
-
-const updatePost = async (id, updatedData) => {
-  let posts = await readAllPosts();
-  const post = posts.filter((post) => post._id === id)[0];
-  if (!post) return null;
-
-  const updatedPost = { ...post, ...updatedData };
-  posts = posts.map((post) => (post._id === id ? updatedPost : post));
-  await writePosts(posts);
-  return updatedPost;
-};
-
-const deletePost = async (id) => {
-  let posts = await readAllPosts();
-  const post = posts.filter((post) => post._id === id)[0];
-  if (!post) return null;
-  posts = posts.filter((post) => post._id !== id);
-  writePosts(posts);
-  return post;
-};
-
-module.exports = {
-  readAllPosts,
-  getPost,
-  createPost,
-  updatePost,
-  deletePost,
-};
+module.exports = mongoose.model("Post", PostSchema);
