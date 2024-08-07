@@ -1,0 +1,9 @@
+2024-08-07 16:29:14 info: Connected to MongoDB Server
+2024-08-07 16:29:14 info: Server is running on port 3000
+2024-08-07 16:29:34 info: Post created: 66b376befbccdf7baf36dc93
+2024-08-07 16:29:59 info: User logged in: 66b25d4e5fc83de643514a29
+2024-08-07 16:30:06 warn: Login attempt with invalid email: shosha
+2024-08-07 16:30:06 error: Login error: Invalid email or password
+2024-08-07 16:30:06 error: Error: Invalid email or password
+2024-08-07 16:30:17 info: User logged in: 66b25d4e5fc83de643514a29
+2024-08-07 16:30:32 error: Error: Invalid Token, please login again
