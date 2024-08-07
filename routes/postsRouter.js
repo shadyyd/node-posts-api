@@ -1,13 +1,28 @@
 const express = require("express");
 const postsController = require("./../controller/postsController");
-
+const auth = require("./../middlewares/auth");
+const images = require("./../middlewares/images");
 const router = express.Router();
 
-router.post("/", postsController.createPost);
+router.use(auth);
+
+router.post(
+  "/",
+  images.uploadImages("images", 3),
+  images.resizeImages("images"),
+  postsController.createPost
+);
 
 router.get("/", postsController.getPosts);
 
-router.patch("/:id", postsController.updatePost);
+router.get("/:id", postsController.getPost);
+
+router.patch(
+  "/:id",
+  images.uploadImages("images", 3),
+  images.resizeImages("images"),
+  postsController.updatePost
+);
 
 router.delete("/:id", postsController.deletePost);
 
