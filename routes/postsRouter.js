@@ -13,9 +13,9 @@ router.use(auth);
 
 router.post(
   "/",
-  // validate(createPostSchema),
   images.uploadImages("images", 3),
   images.resizeImages("images"),
+  validate(createPostSchema),
   postsController.createPost
 );
 
@@ -25,9 +25,9 @@ router.get("/:id", postsController.getPost);
 
 router.patch(
   "/:id",
-  // validate(updatePostSchema),
   images.uploadImages("images", 3),
   images.resizeImages("images"),
+  validate(updatePostSchema),
   postsController.updatePost
 );
 
