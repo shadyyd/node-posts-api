@@ -1,3 +1,266 @@
 2024-08-07 16:30:06 error: Login error: Invalid email or password
 2024-08-07 16:30:06 error: Error: Invalid email or password
 2024-08-07 16:30:32 error: Error: Invalid Token, please login again
+2024-08-07 17:13:19 error: Error: Invalid email format, Password must be at least 8 characters long
+2024-08-07 17:13:27 error: Error: Invalid email format
+2024-08-07 17:14:02 error: Error: "role" is not allowed
+2024-08-07 17:14:07 error: Error: Expected double-quoted property name in JSON at position 65
+2024-08-07 17:14:29 error: Error: Title is required
+2024-08-07 17:14:41 error: Error: Title is required
+2024-08-07 17:15:15 error: Error: Cannot read properties of undefined (reading 'images')
+2024-08-07 17:22:37 error: Error: Cannot read properties of undefined (reading 'images')
+2024-08-07 17:27:12 error: Unknown error: Cannot read properties of undefined (reading 'images')
+2024-08-07 17:28:06 error: Unknown error: Cannot read properties of undefined (reading 'images')
+2024-08-07 17:28:51 error: Unknown error: Cannot read properties of undefined (reading 'images')
+2024-08-07 17:29:02 error: Unknown error: Cannot read properties of undefined (reading 'images')
+2024-08-07 17:30:07 error: Unknown error: Cannot read properties of undefined (reading 'images')
+2024-08-07 17:34:19 error: Unknown error: Cannot read properties of undefined (reading 'images')
+2024-08-07 17:35:02 error: Unknown error: Cannot read properties of undefined (reading 'images')
+2024-08-07 17:35:35 error: Unknown error: Cannot read properties of undefined (reading 'images')
+2024-08-07 17:36:26 error: Unknown error: Cannot read properties of undefined (reading 'images')
+2024-08-07 17:38:38 error: Unknown error: Cannot read properties of undefined (reading 'images')
+2024-08-07 17:42:49 error: Unknown error: Cannot read properties of undefined (reading 'images')
+2024-08-07 17:42:59 error: Error creating post: req.files.map is not a function
+2024-08-07 17:42:59 error: AppError: req.files.map is not a function
+2024-08-07 17:43:23 error: Error creating post: req.files?.map is not a function
+2024-08-07 17:43:23 error: AppError: req.files?.map is not a function
+2024-08-07 17:45:00 error: AppError: Title is required
+2024-08-07 17:46:53 error: AppError: Title is required
+2024-08-07 17:47:11 error: Error creating post: E11000 duplicate key error collection: posts.posts index: title_1 dup key: { title: "blablajjjxdsssss" }
+2024-08-07 17:47:11 error: AppError: E11000 duplicate key error collection: posts.posts index: title_1 dup key: { title: "blablajjjxdsssss" }
+2024-08-07 17:53:41 error: Error creating post: E11000 duplicate key error collection: posts.posts index: title_1 dup key: { title: "blablajjjxdsssssd" }
+2024-08-07 17:53:41 error: AppError: Error creating post
+2024-08-07 17:57:30 error: Error creating post: E11000 duplicate key error collection: posts.posts index: title_1 dup key: { title: "blablajjjxdsssssdssssss" }
+2024-08-07 17:57:30 error: AppError: Error creating post
+2024-08-07 18:03:05 error: Error creating post: E11000 duplicate key error collection: posts.posts index: title_1 dup key: { title: "blablajjjxdsssssdssssssssxx" }
+2024-08-07 18:03:05 error: AppError: Error creating post
+2024-08-07 18:05:44 error: Error creating post: Post validation failed: images.0: Cast to [string] failed for value "[\n' +
+  '  {\n' +
+  "    fieldname: 'images',\n" +
+  "    originalname: 'Screenshot 2024-07-20 110508.png',\n" +
+  "    encoding: '7bit',\n" +
+  "    mimetype: 'image/png',\n" +
+  '    buffer: <Buffer 89 50 4e 47 0d 0a 1a 0a 00 00 00 0d 49 48 44 52 00 00 02 80 00 00 01 f3 08 06 00 00 00 b0 93 ac d1 00 00 00 01 73 52 47 42 00 ae ce 1c e9 00 00 00 04 ... 17933 more bytes>,\n' +
+  '    size: 17983\n' +
+  '  },\n' +
+  '  {\n' +
+  "    fieldname: 'images',\n" +
+  "    originalname: 'Screenshot 2024-07-21 134426.png',\n" +
+  "    encoding: '7bit',\n" +
+  "    mimetype: 'image/png',\n" +
+  '    buffer: <Buffer 89 50 4e 47 0d 0a 1a 0a 00 00 00 0d 49 48 44 52 00 00 00 bf 00 00 00 bf 08 06 00 00 00 af ea 0d 06 00 00 00 01 73 52 47 42 00 ae ce 1c e9 00 00 00 04 ... 6234 more bytes>,\n' +
+  '    size: 6284\n' +
+  '  }\n' +
+  ']" (type string) at path "images.0" because of "CastError"
+2024-08-07 18:05:44 error: AppError: Error creating post
+2024-08-07 18:05:51 error: Error creating post: Post validation failed: images.0: Cast to [string] failed for value "[\n' +
+  '  {\n' +
+  "    fieldname: 'images',\n" +
+  "    originalname: 'Screenshot 2024-07-20 110508.png',\n" +
+  "    encoding: '7bit',\n" +
+  "    mimetype: 'image/png',\n" +
+  '    buffer: <Buffer 89 50 4e 47 0d 0a 1a 0a 00 00 00 0d 49 48 44 52 00 00 02 80 00 00 01 f3 08 06 00 00 00 b0 93 ac d1 00 00 00 01 73 52 47 42 00 ae ce 1c e9 00 00 00 04 ... 17933 more bytes>,\n' +
+  '    size: 17983\n' +
+  '  },\n' +
+  '  {\n' +
+  "    fieldname: 'images',\n" +
+  "    originalname: 'Screenshot 2024-07-21 134426.png',\n" +
+  "    encoding: '7bit',\n" +
+  "    mimetype: 'image/png',\n" +
+  '    buffer: <Buffer 89 50 4e 47 0d 0a 1a 0a 00 00 00 0d 49 48 44 52 00 00 00 bf 00 00 00 bf 08 06 00 00 00 af ea 0d 06 00 00 00 01 73 52 47 42 00 ae ce 1c e9 00 00 00 04 ... 6234 more bytes>,\n' +
+  '    size: 6284\n' +
+  '  }\n' +
+  ']" (type string) at path "images.0" because of "CastError"
+2024-08-07 18:05:51 error: AppError: Error creating post
+2024-08-07 18:07:22 error: Error creating post: Post validation failed: images.0: Cast to [string] failed for value "[\n' +
+  '  {\n' +
+  "    fieldname: 'images',\n" +
+  "    originalname: 'Screenshot 2024-07-20 110508.png',\n" +
+  "    encoding: '7bit',\n" +
+  "    mimetype: 'image/png',\n" +
+  '    buffer: <Buffer 89 50 4e 47 0d 0a 1a 0a 00 00 00 0d 49 48 44 52 00 00 02 80 00 00 01 f3 08 06 00 00 00 b0 93 ac d1 00 00 00 01 73 52 47 42 00 ae ce 1c e9 00 00 00 04 ... 17933 more bytes>,\n' +
+  '    size: 17983\n' +
+  '  },\n' +
+  '  {\n' +
+  "    fieldname: 'images',\n" +
+  "    originalname: 'Screenshot 2024-07-21 134426.png',\n" +
+  "    encoding: '7bit',\n" +
+  "    mimetype: 'image/png',\n" +
+  '    buffer: <Buffer 89 50 4e 47 0d 0a 1a 0a 00 00 00 0d 49 48 44 52 00 00 00 bf 00 00 00 bf 08 06 00 00 00 af ea 0d 06 00 00 00 01 73 52 47 42 00 ae ce 1c e9 00 00 00 04 ... 6234 more bytes>,\n' +
+  '    size: 6284\n' +
+  '  }\n' +
+  ']" (type string) at path "images.0" because of "CastError"
+2024-08-07 18:07:22 error: AppError: Error creating post
+2024-08-07 18:08:30 error: Error creating post: #<Object> is not a function
+2024-08-07 18:08:30 error: AppError: Error creating post
+2024-08-07 18:10:39 error: Error creating post: #<Object> is not a function
+2024-08-07 18:10:39 error: AppError: Error creating post
+2024-08-07 18:10:49 error: Error creating post: #<Object> is not a function
+2024-08-07 18:10:49 error: AppError: Error creating post
+2024-08-07 18:11:32 error: Error creating post: req.files.images is not iterable (cannot read property undefined)
+2024-08-07 18:11:32 error: AppError: Error creating post
+2024-08-07 18:11:42 error: Error creating post: req.files.images is not iterable (cannot read property undefined)
+2024-08-07 18:11:42 error: AppError: Error creating post
+2024-08-07 18:12:33 error: Error creating post: Post validation failed: images.0: Cast to [string] failed for value "[\n' +
+  '  {\n' +
+  "    fieldname: 'images',\n" +
+  "    originalname: 'Screenshot 2024-07-20 110508.png',\n" +
+  "    encoding: '7bit',\n" +
+  "    mimetype: 'image/png',\n" +
+  '    buffer: <Buffer 89 50 4e 47 0d 0a 1a 0a 00 00 00 0d 49 48 44 52 00 00 02 80 00 00 01 f3 08 06 00 00 00 b0 93 ac d1 00 00 00 01 73 52 47 42 00 ae ce 1c e9 00 00 00 04 ... 17933 more bytes>,\n' +
+  '    size: 17983\n' +
+  '  },\n' +
+  '  {\n' +
+  "    fieldname: 'images',\n" +
+  "    originalname: 'Screenshot 2024-07-21 134426.png',\n" +
+  "    encoding: '7bit',\n" +
+  "    mimetype: 'image/png',\n" +
+  '    buffer: <Buffer 89 50 4e 47 0d 0a 1a 0a 00 00 00 0d 49 48 44 52 00 00 00 bf 00 00 00 bf 08 06 00 00 00 af ea 0d 06 00 00 00 01 73 52 47 42 00 ae ce 1c e9 00 00 00 04 ... 6234 more bytes>,\n' +
+  '    size: 6284\n' +
+  '  }\n' +
+  ']" (type string) at path "images.0" because of "CastError"
+2024-08-07 18:12:33 error: AppError: Error creating post
+2024-08-07 18:13:41 error: Error creating post: Post validation failed: images.0: Cast to [string] failed for value "[\n' +
+  '  {\n' +
+  "    fieldname: 'images',\n" +
+  "    originalname: 'Screenshot 2024-07-20 110508.png',\n" +
+  "    encoding: '7bit',\n" +
+  "    mimetype: 'image/png',\n" +
+  '    buffer: <Buffer 89 50 4e 47 0d 0a 1a 0a 00 00 00 0d 49 48 44 52 00 00 02 80 00 00 01 f3 08 06 00 00 00 b0 93 ac d1 00 00 00 01 73 52 47 42 00 ae ce 1c e9 00 00 00 04 ... 17933 more bytes>,\n' +
+  '    size: 17983\n' +
+  '  },\n' +
+  '  {\n' +
+  "    fieldname: 'images',\n" +
+  "    originalname: 'Screenshot 2024-07-21 134426.png',\n" +
+  "    encoding: '7bit',\n" +
+  "    mimetype: 'image/png',\n" +
+  '    buffer: <Buffer 89 50 4e 47 0d 0a 1a 0a 00 00 00 0d 49 48 44 52 00 00 00 bf 00 00 00 bf 08 06 00 00 00 af ea 0d 06 00 00 00 01 73 52 47 42 00 ae ce 1c e9 00 00 00 04 ... 6234 more bytes>,\n' +
+  '    size: 6284\n' +
+  '  }\n' +
+  ']" (type string) at path "images.0" because of "CastError"
+2024-08-07 18:13:41 error: AppError: Error creating post
+2024-08-07 18:14:23 error: Validation error: Title is required
+2024-08-07 18:14:23 error: AppError: Validation failed: Title is required
+2024-08-07 18:15:05 error: Error creating post: Post validation failed: images.0: Cast to [string] failed for value "[\n' +
+  '  {\n' +
+  "    fieldname: 'images',\n" +
+  "    originalname: 'Screenshot 2024-07-20 110508.png',\n" +
+  "    encoding: '7bit',\n" +
+  "    mimetype: 'image/png',\n" +
+  '    buffer: <Buffer 89 50 4e 47 0d 0a 1a 0a 00 00 00 0d 49 48 44 52 00 00 02 80 00 00 01 f3 08 06 00 00 00 b0 93 ac d1 00 00 00 01 73 52 47 42 00 ae ce 1c e9 00 00 00 04 ... 17933 more bytes>,\n' +
+  '    size: 17983\n' +
+  '  },\n' +
+  '  {\n' +
+  "    fieldname: 'images',\n" +
+  "    originalname: 'Screenshot 2024-07-21 134426.png',\n" +
+  "    encoding: '7bit',\n" +
+  "    mimetype: 'image/png',\n" +
+  '    buffer: <Buffer 89 50 4e 47 0d 0a 1a 0a 00 00 00 0d 49 48 44 52 00 00 00 bf 00 00 00 bf 08 06 00 00 00 af ea 0d 06 00 00 00 01 73 52 47 42 00 ae ce 1c e9 00 00 00 04 ... 6234 more bytes>,\n' +
+  '    size: 6284\n' +
+  '  }\n' +
+  ']" (type string) at path "images.0" because of "CastError"
+2024-08-07 18:15:05 error: AppError: Error creating post
+2024-08-07 18:15:10 error: Error creating post: Post validation failed: images.0: Cast to [string] failed for value "[\n' +
+  '  {\n' +
+  "    fieldname: 'images',\n" +
+  "    originalname: 'Screenshot 2024-07-20 110508.png',\n" +
+  "    encoding: '7bit',\n" +
+  "    mimetype: 'image/png',\n" +
+  '    buffer: <Buffer 89 50 4e 47 0d 0a 1a 0a 00 00 00 0d 49 48 44 52 00 00 02 80 00 00 01 f3 08 06 00 00 00 b0 93 ac d1 00 00 00 01 73 52 47 42 00 ae ce 1c e9 00 00 00 04 ... 17933 more bytes>,\n' +
+  '    size: 17983\n' +
+  '  },\n' +
+  '  {\n' +
+  "    fieldname: 'images',\n" +
+  "    originalname: 'Screenshot 2024-07-21 134426.png',\n" +
+  "    encoding: '7bit',\n" +
+  "    mimetype: 'image/png',\n" +
+  '    buffer: <Buffer 89 50 4e 47 0d 0a 1a 0a 00 00 00 0d 49 48 44 52 00 00 00 bf 00 00 00 bf 08 06 00 00 00 af ea 0d 06 00 00 00 01 73 52 47 42 00 ae ce 1c e9 00 00 00 04 ... 6234 more bytes>,\n' +
+  '    size: 6284\n' +
+  '  }\n' +
+  ']" (type string) at path "images.0" because of "CastError"
+2024-08-07 18:15:10 error: AppError: Error creating post
+2024-08-09 20:37:44 error: AppError: Invalid Token, please login again
+2024-08-09 20:38:14 error: Validation error: Invalid email format
+2024-08-09 20:38:14 error: AppError: Validation failed: Invalid email format
+2024-08-09 20:50:00 error: Error creating post: Post validation failed: images.0: Cast to [string] failed for value "[\n' +
+  '  {\n' +
+  "    fieldname: 'images',\n" +
+  "    originalname: 'Screenshot 2024-07-20 110508.png',\n" +
+  "    encoding: '7bit',\n" +
+  "    mimetype: 'image/png',\n" +
+  '    buffer: <Buffer 89 50 4e 47 0d 0a 1a 0a 00 00 00 0d 49 48 44 52 00 00 02 80 00 00 01 f3 08 06 00 00 00 b0 93 ac d1 00 00 00 01 73 52 47 42 00 ae ce 1c e9 00 00 00 04 ... 17933 more bytes>,\n' +
+  '    size: 17983\n' +
+  '  },\n' +
+  '  {\n' +
+  "    fieldname: 'images',\n" +
+  "    originalname: 'Screenshot 2024-07-21 134426.png',\n" +
+  "    encoding: '7bit',\n" +
+  "    mimetype: 'image/png',\n" +
+  '    buffer: <Buffer 89 50 4e 47 0d 0a 1a 0a 00 00 00 0d 49 48 44 52 00 00 00 bf 00 00 00 bf 08 06 00 00 00 af ea 0d 06 00 00 00 01 73 52 47 42 00 ae ce 1c e9 00 00 00 04 ... 6234 more bytes>,\n' +
+  '    size: 6284\n' +
+  '  }\n' +
+  ']" (type string) at path "images.0" because of "CastError"
+2024-08-09 20:50:00 error: AppError: Error creating post
+2024-08-09 20:56:27 error: Error creating post: Post validation failed: images.0: Cast to [string] failed for value "[\n' +
+  '  {\n' +
+  "    fieldname: 'images',\n" +
+  "    originalname: 'Screenshot 2024-07-20 110508.png',\n" +
+  "    encoding: '7bit',\n" +
+  "    mimetype: 'image/png',\n" +
+  '    buffer: <Buffer 89 50 4e 47 0d 0a 1a 0a 00 00 00 0d 49 48 44 52 00 00 02 80 00 00 01 f3 08 06 00 00 00 b0 93 ac d1 00 00 00 01 73 52 47 42 00 ae ce 1c e9 00 00 00 04 ... 17933 more bytes>,\n' +
+  '    size: 17983\n' +
+  '  },\n' +
+  '  {\n' +
+  "    fieldname: 'images',\n" +
+  "    originalname: 'Screenshot 2024-07-21 134426.png',\n" +
+  "    encoding: '7bit',\n" +
+  "    mimetype: 'image/png',\n" +
+  '    buffer: <Buffer 89 50 4e 47 0d 0a 1a 0a 00 00 00 0d 49 48 44 52 00 00 00 bf 00 00 00 bf 08 06 00 00 00 af ea 0d 06 00 00 00 01 73 52 47 42 00 ae ce 1c e9 00 00 00 04 ... 6234 more bytes>,\n' +
+  '    size: 6284\n' +
+  '  }\n' +
+  ']" (type string) at path "images.0" because of "CastError"
+2024-08-09 20:56:27 error: AppError: Error creating post
+2024-08-09 20:57:19 error: Error creating post: Post validation failed: images.0: Cast to [string] failed for value "[\n' +
+  '  {\n' +
+  "    fieldname: 'images',\n" +
+  "    originalname: 'Screenshot 2024-07-20 110508.png',\n" +
+  "    encoding: '7bit',\n" +
+  "    mimetype: 'image/png',\n" +
+  '    buffer: <Buffer 89 50 4e 47 0d 0a 1a 0a 00 00 00 0d 49 48 44 52 00 00 02 80 00 00 01 f3 08 06 00 00 00 b0 93 ac d1 00 00 00 01 73 52 47 42 00 ae ce 1c e9 00 00 00 04 ... 17933 more bytes>,\n' +
+  '    size: 17983\n' +
+  '  },\n' +
+  '  {\n' +
+  "    fieldname: 'images',\n" +
+  "    originalname: 'Screenshot 2024-07-21 134426.png',\n" +
+  "    encoding: '7bit',\n" +
+  "    mimetype: 'image/png',\n" +
+  '    buffer: <Buffer 89 50 4e 47 0d 0a 1a 0a 00 00 00 0d 49 48 44 52 00 00 00 bf 00 00 00 bf 08 06 00 00 00 af ea 0d 06 00 00 00 01 73 52 47 42 00 ae ce 1c e9 00 00 00 04 ... 6234 more bytes>,\n' +
+  '    size: 6284\n' +
+  '  }\n' +
+  ']" (type string) at path "images.0" because of "CastError"
+2024-08-09 20:57:19 error: AppError: Error creating post
+2024-08-09 20:57:44 error: Error creating post: Post validation failed: images.0: Cast to [string] failed for value "[\n' +
+  '  {\n' +
+  "    fieldname: 'images',\n" +
+  "    originalname: 'Screenshot 2024-07-20 110508.png',\n" +
+  "    encoding: '7bit',\n" +
+  "    mimetype: 'image/png',\n" +
+  '    buffer: <Buffer 89 50 4e 47 0d 0a 1a 0a 00 00 00 0d 49 48 44 52 00 00 02 80 00 00 01 f3 08 06 00 00 00 b0 93 ac d1 00 00 00 01 73 52 47 42 00 ae ce 1c e9 00 00 00 04 ... 17933 more bytes>,\n' +
+  '    size: 17983\n' +
+  '  },\n' +
+  '  {\n' +
+  "    fieldname: 'images',\n" +
+  "    originalname: 'Screenshot 2024-07-21 134426.png',\n" +
+  "    encoding: '7bit',\n" +
+  "    mimetype: 'image/png',\n" +
+  '    buffer: <Buffer 89 50 4e 47 0d 0a 1a 0a 00 00 00 0d 49 48 44 52 00 00 00 bf 00 00 00 bf 08 06 00 00 00 af ea 0d 06 00 00 00 01 73 52 47 42 00 ae ce 1c e9 00 00 00 04 ... 6234 more bytes>,\n' +
+  '    size: 6284\n' +
+  '  }\n' +
+  ']" (type string) at path "images.0" because of "CastError"
+2024-08-09 20:57:44 error: AppError: Error creating post
+2024-08-09 21:03:02 error: Validation error: Title is required
+2024-08-09 21:03:02 error: AppError: Validation failed: Title is required
+2024-08-09 21:03:39 error: Validation error: Title is required
+2024-08-09 21:03:39 error: AppError: Validation failed: Title is required
+2024-08-09 21:03:56 error: Validation error: Title is required
+2024-08-09 21:03:56 error: AppError: Validation failed: Title is required

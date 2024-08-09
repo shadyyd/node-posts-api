@@ -1,9 +1,10 @@
 const postModel = require("./../model/postsModel");
 const AppError = require("./../utils/AppError");
-const logger = require("../utils/logger"); // Import the logger
+const logger = require("../utils/logger");
 
 const createPost = async (req, res, next) => {
   try {
+    console.log(req.body);
     const post = await postModel.create(req.body);
     logger.info(`Post created: ${post._id}`);
     res.status(201).json(post);

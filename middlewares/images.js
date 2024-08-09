@@ -10,7 +10,7 @@ const multerFilter = (req, file, cb) => {
   if (file.mimetype.startsWith("image")) {
     cb(null, true);
   } else {
-    cb(new AppError(400, "Not an image! Please upload only images"));
+    cb(new AppError(400, "Not an image! Please upload only images"), false);
   }
 };
 
@@ -32,7 +32,7 @@ exports.resizeImages = (fieldname) => {
     const isSingleUpload = req.file != null;
     const files = isSingleUpload ? [req.file] : req.files[fieldname];
 
-    if (!files) return next();
+    if (!files) return next(); // Skip if no files are provided
 
     const resizeOptions = {
       width: Number(req.body.width) || 2000,
@@ -44,28 +44,36 @@ exports.resizeImages = (fieldname) => {
       fs.mkdirSync(directory, { recursive: true });
     }
 
-    const processedFiles = await Promise.all(
-      files.map(async (file, i) => {
-        const filename = `api-${Date.now()}-${i + 1}.jpeg`;
-        const filePath = path.join(directory, filename);
+    try {
+      const processedFiles = await Promise.all(
+        files.map(async (file, i) => {
+          const filename = `api-${Date.now()}-${i + 1}.jpeg`;
+          const filePath = path.join(directory, filename);
 
-        await sharp(file.buffer)
-          .resize(resizeOptions.width, resizeOptions.height)
-          .toFormat("jpeg")
-          .jpeg({ quality: 90 })
-          .toFile(filePath);
+          await sharp(file.buffer)
+            .resize(resizeOptions.width, resizeOptions.height)
+            .toFormat("jpeg")
+            .jpeg({ quality: 90 })
+            .toFile(filePath);
 
-        return { filename, path: filePath };
-      })
-    );
+          return { filename, path: filePath };
+        })
+      );
 
-    if (isSingleUpload) {
-      req.file.filename = processedFiles[0].filename;
-      req.file.path = processedFiles[0].path;
-    } else {
-      req.body[fieldname] = processedFiles.map((file) => file.filename);
+      if (isSingleUpload) {
+        req.file.filename = processedFiles[0].filename;
+        req.file.path = processedFiles[0].path;
+      } else {
+        req.body[fieldname] = processedFiles.map((file) => file.filename);
+      }
+
+      console.log(req.body[fieldname]); // For debugging
+
+      next();
+    } catch (error) {
+      // Log and handle errors during processing
+      console.error(`Error during image processing: ${error.message}`);
+      return next(new AppError(500, "Error processing images"));
     }
-
-    next();
   };
 };

@@ -4,6 +4,7 @@ require("express-async-errors");
 const dotenv = require("dotenv");
 const morgan = require("morgan");
 const mongoose = require("mongoose");
+const AppError = require("./utils/AppError");
 const logger = require("./utils/logger");
 
 const postsRouter = require("./routes/postsRouter");
@@ -22,9 +23,16 @@ app.use("/posts", postsRouter);
 app.use(imagesRouter);
 
 // Error handling middleware
-app.use((error, req, res, next) => {
-  logger.error(`Error: ${error.message}`);
-  res.status(error.statusCode).json({ message: error.message });
+app.use((err, req, res, next) => {
+  if (err instanceof AppError) {
+    // Custom error
+    logger.error(`AppError: ${err.message}`);
+    res.status(err.statusCode).json({ message: err.message });
+  } else {
+    // Generic error
+    logger.error(`Unknown error: ${err.message}`);
+    res.status(500).json({ message: "An unknown error occurred" });
+  }
 });
 
 mongoose.connect(process.env.DATABASE_URL).then(() => {
