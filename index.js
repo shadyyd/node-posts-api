@@ -6,6 +6,7 @@ const morgan = require("morgan");
 const mongoose = require("mongoose");
 const AppError = require("./utils/AppError");
 const logger = require("./utils/logger");
+const cors = require("cors");
 
 const postsRouter = require("./routes/postsRouter");
 const userRouter = require("./routes/userRouter");
@@ -17,6 +18,8 @@ app.use(morgan("dev"));
 dotenv.config({ path: "./config.env" });
 app.use(express.json());
 app.use(express.static("./public"));
+
+app.use(cors());
 
 app.use(userRouter);
 app.use("/posts", postsRouter);
